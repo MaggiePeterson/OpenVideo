@@ -9,13 +9,18 @@
 #include "OpenVideo.hpp"
 
 #include <stdio.h>
-char keyboard; //input from keyboard
 
-/* This callback function runs once per frame. Use it to perform any
- * quick processing you need, or have it put the frame into your application's
- * input queue. If this function takes too long, you'll start losing frames. */
-
-
+//constructor
+OpenVideo::OpenVideo(int camNum){
+   this->webCamIndex = camNum;
+   this->ChangeExposure();
+   this->capture = new VideoCapture(this->webCamIndex);
+   if(!this->capture->isOpened()){                       //opens camera
+      //error in opening the video input
+      cerr << "Unable to open video file: " << webCamIndex << endl;
+      exit(EXIT_FAILURE);
+   }
+}
 
 void OpenVideo::cb(uvc_frame_t *frame, void *ptr) {
    uvc_frame_t *bgr;
@@ -37,17 +42,7 @@ void OpenVideo::cb(uvc_frame_t *frame, void *ptr) {
    uvc_free_frame(bgr);
 }
 
-OpenVideo::OpenVideo(int camNum){
-   this->webCamIndex = camNum;
-   this->ChangeExposure();
-   this->capture = new VideoCapture(this->webCamIndex);        //XCODE CRASHED FOR INFO.PLIST ERROR
-   if(!this->capture->isOpened()){
-      //error in opening the video input
-      cerr << "Unable to open video file: " << webCamIndex << endl;
-      exit(EXIT_FAILURE);
-   }
-}
-
+//changes exposure to low using libuvc
 void OpenVideo::ChangeExposure(void) {
    uvc_context_t *ctx;
    uvc_device_t *dev;
@@ -123,6 +118,7 @@ void OpenVideo::ChangeExposure(void) {
    sleep(3);
 }
 
+//returns frame
 Mat OpenVideo::getImage(){
    static Mat image;
 

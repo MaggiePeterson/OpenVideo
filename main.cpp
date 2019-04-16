@@ -9,15 +9,9 @@
 #include "OpenVideo.hpp"
 using namespace cv;
 
-
-/* This callback function runs once per frame. Use it to perform any
- * quick processing you need, or have it put the frame into your application's
- * input queue. If this function takes too long, you'll start losing frames. */
-
 int main(int argc, char **argv) {
 
-
-   OpenVideo myCamera(1); //OpenVideo objects takes in int CameraIndex
+   OpenVideo myCamera(1); 
    char keyboard = 0;
 
    //opens camera continuously until user presses q
