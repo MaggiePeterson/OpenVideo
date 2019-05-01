@@ -1,4 +1,4 @@
-
+//
 //  OpenVideo.hpp
 //  VisionProcessing2019
 //
@@ -10,8 +10,6 @@
 #define OpenVideo_hpp
 
 #include <stdio.h>
-
-
 #include "opencv2/core.hpp"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
@@ -21,6 +19,7 @@
 #include "libuvc.h" //has to be libuvc/libuvc.h in pi
 #include <stdio.h>
 #include <unistd.h>
+#include "threadInterface.hpp"
 
 //C++
 #include <cstdlib>
@@ -37,11 +36,11 @@ class OpenVideo {
 
 public:
    OpenVideo(int camNum);
-   Mat getImage();
+   static void cb(uvc_frame_t *frame, void *ptr);
+   Mat* getImage(threadInterface * threadIntf);
 
 private:
    void ChangeExposure();
    int webCamIndex;
-   static void cb(uvc_frame_t *frame, void *ptr);
    VideoCapture *capture;
 };

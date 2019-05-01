@@ -1,4 +1,4 @@
-//
+
 //  OpenVideo.cpp
 //  VisionProcessing2019
 //
@@ -7,6 +7,7 @@
 //
 
 #include "OpenVideo.hpp"
+
 
 #include <stdio.h>
 char keyboard; //input from keyboard
@@ -123,13 +124,19 @@ void OpenVideo::ChangeExposure(void) {
    sleep(3);
 }
 
-Mat OpenVideo::getImage(){
-   static Mat image;
+Mat* OpenVideo::getImage(threadInterface * threadIntf){
 
-   if(!this->capture->read(image)) {
+   while(!threadIntf->imgMutex.try_lock()){
+      this_thread::sleep_for(std::chrono::seconds(2));
+   }
+
+   if(!this->capture->read(*threadIntf->imgPtr)) {
       cerr << "Unable to read next frame." << endl;
       cerr << "Exiting..." << endl;
       exit(EXIT_FAILURE);
    }
-   return image;
+
+   threadIntf->imgMutex.unlock();
+   return threadIntf->imgPtr;
+
 }
