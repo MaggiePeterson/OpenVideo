@@ -9,24 +9,12 @@
 #ifndef OpenVideo_hpp
 #define OpenVideo_hpp
 
-#include <stdio.h>
-
-
 #include "opencv2/core.hpp"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/videoio.hpp"
-
 #include <iostream>
 #include "libuvc.h" //has to be libuvc/libuvc.h in pi
-#include <stdio.h>
-#include <unistd.h>
-
-//C++
-#include <cstdlib>
-#include <fstream>
-#include <iostream>
-#include <sstream>
 
 using namespace cv;
 using namespace std;
