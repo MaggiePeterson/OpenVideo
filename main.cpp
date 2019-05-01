@@ -6,14 +6,7 @@
 //  Copyright © 2019 Margaret Peterson. All rights reserved.
 //
 
-
-#include <iostream>
-#include <fstream>
-#include <unistd.h>
-#include <tuple>
 #include "OpenVideoThread.hpp"
-#include <string>
-#include <vector>
 
 using namespace cv;
 using namespace std;
