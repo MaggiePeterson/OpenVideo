@@ -1,7 +1,8 @@
-###**OpenVideo for Vision Processing**
+# **OpenVideo for Vision Processing**
+
 This library uses OpenCV and LIBUVC to open a usb connected camera, lower its exposure, and return the camera stream.
 
-####**Documentation**
+## **Documentation**
 
 - ```OpenVideo(int cameraIndex)```
 Constructor 
