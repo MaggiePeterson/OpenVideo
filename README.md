@@ -1,6 +1,6 @@
 # **OpenVideo for Vision Processing**
 
-This library uses OpenCV and LIBUVC to open a usb connected camera, lower its exposure, and return the camera stream.
+This library uses OpenCV and LIBUVC to open a usb connected camera, lowers its exposure, and returns the camera stream.
 
 ## **Documentation**
 
