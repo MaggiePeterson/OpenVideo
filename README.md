@@ -1,6 +1,7 @@
-# **OpenVideo for Vision Processing**
+# **OpenVideo for FRC Vision Processing**
 
-This library uses OpenCV and LIBUVC to open a usb connected camera, lowers its exposure, and returns the camera stream.
+This library uses OpenCV and LIBUVC to open a usb connected camera, lowers its exposure, and returns the camera stream. FRC Vision targets use retroreflective tape, which reflects light in the direction it came from. A camera's exposure determines how much light is let in.
+By lowering the exposure on this camera, the vision targets in the image are more visible.
 
 ## **Documentation**
 
@@ -30,6 +31,9 @@ This library uses OpenCV and LIBUVC to open a usb connected camera, lowers its e
 [OpenCV](https://docs.opencv.org/3.0-beta/modules/refman.html) <br/>
 [LibUVC](https://ken.tossell.net/libuvc/doc/)  
 
+
+## **Result**
+![Vision Target](https://drive.google.com/file/d/1srZLrYHQl7CR-JystCjmet6MPEayplbm/view?usp=sharing)
 
 
 
