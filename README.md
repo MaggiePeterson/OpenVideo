@@ -23,8 +23,12 @@ This library uses OpenCV and LIBUVC to open a usb connected camera, lower its ex
    Pointer to cv::VideoCapture object.
    More on [VideoCapture](https://docs.opencv.org/3.1.0/d8/dfe/classcv_1_1VideoCapture.html)
 
+## **Installing**
 
+## **Libraries**
 
+[OpenCV](https://docs.opencv.org/3.0-beta/modules/refman.html)
+[LibUVC](https://ken.tossell.net/libuvc/doc/)
 
 
 
