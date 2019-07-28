@@ -28,6 +28,7 @@ This library uses OpenCV and LIBUVC to open a usb connected camera, lower its ex
 ## **Libraries**
 
 [OpenCV](https://docs.opencv.org/3.0-beta/modules/refman.html)
+
 [LibUVC](https://ken.tossell.net/libuvc/doc/)
 
 
