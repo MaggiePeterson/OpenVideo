@@ -11,9 +11,11 @@ This library uses OpenCV and LIBUVC to open a usb connected camera, lower its ex
    Calls ChangeExposure() and opens the camera to start the stream.
 
 - ```Mat getImage()```
+
    returns the current frame as a cv::Mat
 
 - ```void ChangeExposure()```
+
    uses LIBUVC to lower the exposure of the camera
    
 - ```VideoCapture * capture```
