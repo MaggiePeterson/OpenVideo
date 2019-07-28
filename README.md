@@ -7,7 +7,7 @@ This library uses OpenCV and LIBUVC to open a usb connected camera, lower its ex
 - ```OpenVideo(int cameraIndex)```
 
    Constructor <br/>
-   cameraIndex -- ID of the camera to open. If a single camera is connected, pass 0.
+   cameraIndex -- ID of the camera to open. If a single camera is connected, pass 0. <br/>
    Calls ChangeExposure() and opens the camera to start the stream.
 
 - ```Mat getImage()```
@@ -27,7 +27,7 @@ This library uses OpenCV and LIBUVC to open a usb connected camera, lower its ex
 
 ## **Libraries**
 
-[OpenCV](https://docs.opencv.org/3.0-beta/modules/refman.html) 
+[OpenCV](https://docs.opencv.org/3.0-beta/modules/refman.html) <br/>
 [LibUVC](https://ken.tossell.net/libuvc/doc/)  
 
 
